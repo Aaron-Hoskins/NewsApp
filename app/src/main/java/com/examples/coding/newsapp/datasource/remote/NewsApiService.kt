@@ -14,4 +14,8 @@ interface NewsApiService {
     @GET(PATH_TOP_HEADLINES)
     fun getTopHeadlines(@Query(QUERY_PARAM_COUNTRY) country : String, @Header("Authorization") key : String)
     : Observable<NewsApiResponse>
+
+    @GET(PATH_TOP_HEADLINES)
+    fun getTopHeadlinesByCategory(@Query(QUERY_PARAM_COUNTRY) country : String, @Query("category") category : String, @Header("Authorization") key : String)
+            : Observable<NewsApiResponse>
 }
